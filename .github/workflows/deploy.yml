@@ -31,3 +31,7 @@ jobs:
       run: npm test  # Replace with your test command
 
     # 5. Deploy the application
+    - name: Deploy to AWS S3
+      run: |
+        # Sync the build output to your S3 bucket
+        aws s3 sync ./build s3://kattybucket --delete
